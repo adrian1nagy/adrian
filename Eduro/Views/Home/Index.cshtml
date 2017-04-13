@@ -1,0 +1,71 @@
+﻿<div id="body">
+    @*<script src="//content.jwplatform.com/players/Fb6uEdvt-5WQ8wuwN.js"></script>*@
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Welcome to ASP.NET Web API!</h1>
+                <h2>Modify the code in this template to jump-start your ASP.NET Web API development.</h2>
+            </hgroup>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        <h3>We suggest the following steps:</h3>
+        <ol class="round">
+
+            <li class="two">
+                <h5>Add NuGet packages and jump-start your coding</h5>
+                NuGet makes it easy to install and update free libraries and tools.
+                <a href="http://go.microsoft.com/fwlink/?LinkId=245161">Learn more…</a>
+            </li>
+            <li class="three">
+                <h5>Find Web Hosting</h5>
+                You can easily find a web hosting company that offers the right mix of features
+                and price for your applications.
+                <a href="http://go.microsoft.com/fwlink/?LinkId=245164">Learn more…</a>
+            </li>
+        </ol>
+    </section>
+</div>
+
+<div id="videoDiv">
+    <video id="myvideo" width="480" height="320" controls poster="images/loading_gif.gif">
+        <source src="api/videos/mp4/test1" type="video/mp4">
+    </video>
+</div>
+
+
+<div>
+    <p>
+        <button id="playme">Play/Pause Video</button>
+    </p>
+    <p>
+        <button id="jump">Jump to 7</button>
+    </p>
+</div>
+
+
+<script type="text/javascript">
+    document.getElementById('myvideo').addEventListener('loadedmetadata', function () {
+        this.currentTime = 50;
+    }, false);
+
+    var myvideo = document.getElementById('myvideo'),
+        playbutton = document.getElementById('playme'),
+        jumplink = document.getElementById('jump');
+
+    jumplink.addEventListener("click", function (event) {
+        event.preventDefault();
+        myvideo.pause();
+        myvideo.currentTime = 7;
+        myvideo.play();
+    }, false);
+
+    // only in to demonstrate video
+    playbutton.addEventListener("click", function () {
+        if (myvideo.paused) {
+            myvideo.play();
+        } else {
+            myvideo.pause();
+        }
+    }, false);
+</script>

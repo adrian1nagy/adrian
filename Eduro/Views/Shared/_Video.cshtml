@@ -1,0 +1,9 @@
+﻿@{
+    var path = ViewData["path"];
+    var type = ViewData["type"];
+    var source = "/api/videos/" + path;
+}
+
+<video width="480" height="320" poster="images/loading_gif.gif" preload="auto" controls autoplay>
+    <source src=@source type=@type>
+</video>
